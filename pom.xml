@@ -105,15 +105,16 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
                 <configuration>
-                    <includes>
-                        <include>**/**PRunner.java</include>
+                    <!--<includes>
+                        <include>**/**jetsmartRunner.java</include>
                     </includes>
                     <parallel>methods</parallel>
                     <threadCount>4</threadCount>
-                    <useUnlimitedThreads>false</useUnlimitedThreads>
+                    <useUnlimitedThreads>false</useUnlimitedThreads>-->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
-
-
             </plugin>
 
 

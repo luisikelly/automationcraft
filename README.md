@@ -1,2 +1,7 @@
-# bddfmwk
-bdd framework
+# automationcraft
+- automatizar pruebas funcionales
+    - web (Selenium)
+    - mobile (Appium)
+    - API
+    
+    
