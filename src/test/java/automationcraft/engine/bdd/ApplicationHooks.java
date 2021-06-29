@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import automationcraft.engine.utils.LoadProperties;
 import automationcraft.engine.selenium.DriverFactory;
 
+import java.net.MalformedURLException;
 import java.util.Properties;
 
 public class ApplicationHooks {
@@ -19,8 +20,9 @@ public class ApplicationHooks {
         prop = LoadProperties.init_prop();
     }
     @Before(order =1)
-    public void launchBrowser(){
+    public void launchBrowser() throws MalformedURLException {
         String browserName = prop.getProperty("browser");
+        //String seleniumGrid = (prop.getProperty("seleniumGrid"));
         driverFactory = new DriverFactory();
         driver = driverFactory.init_driver(browserName);
     }
