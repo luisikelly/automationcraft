@@ -88,8 +88,6 @@
 
     <build>
         <plugins>
-
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -106,7 +104,7 @@
                 <version>${maven.surefire.version}</version>
                 <configuration>
                     <includes>
-                        <include>**/**jetsmartRunner.java</include>
+                        <include>**/**PetClinic.java</include>
                     </includes>
                     <parallel>methods</parallel>
                     <threadCount>4</threadCount>
