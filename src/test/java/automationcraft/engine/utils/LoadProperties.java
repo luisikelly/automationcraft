@@ -1,4 +1,4 @@
-package automationcraft.engine.properties;
+package automationcraft.engine.utils;
 
 import java.util.Enumeration;
 import java.util.Properties;

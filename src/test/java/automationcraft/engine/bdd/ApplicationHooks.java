@@ -1,14 +1,13 @@
 package automationcraft.engine.bdd;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
+import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import automationcraft.engine.properties.LoadProperties;
+import automationcraft.engine.utils.LoadProperties;
 import automationcraft.engine.selenium.DriverFactory;
 
+import java.net.MalformedURLException;
 import java.util.Properties;
 
 public class ApplicationHooks {
@@ -16,15 +15,17 @@ public class ApplicationHooks {
     private WebDriver driver;
     Properties prop;
 
+
     @Before(order = 0)
     public void getProperty(){
         prop = LoadProperties.init_prop();
     }
     @Before(order =1)
-    public void launchBrowser(){
+    public void launchBrowser() throws MalformedURLException {
         String browserName = prop.getProperty("browser");
+        String remoteDriver = (prop.getProperty("remoteDriver"));
         driverFactory = new DriverFactory();
-        driver = driverFactory.init_driver(browserName);
+        driver = driverFactory.init_driver(browserName,remoteDriver);
     }
 
     @After(order=0)

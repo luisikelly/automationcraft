@@ -47,7 +47,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>4.2.2</version>
+            <version>4.4.3</version>
         </dependency>
 
         <dependency>
@@ -88,8 +88,6 @@
 
     <build>
         <plugins>
-
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -106,14 +104,12 @@
                 <version>${maven.surefire.version}</version>
                 <configuration>
                     <includes>
-                        <include>**/**PRunner.java</include>
+                        <include>**/**PetClinic.java</include>
                     </includes>
                     <parallel>methods</parallel>
                     <threadCount>4</threadCount>
                     <useUnlimitedThreads>false</useUnlimitedThreads>
                 </configuration>
-
-
             </plugin>
 
 
