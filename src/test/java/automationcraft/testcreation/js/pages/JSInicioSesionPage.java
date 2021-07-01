@@ -1,4 +1,4 @@
-package automationcraft.testcreation.jetsmart.pages;
+package automationcraft.testcreation.js.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,11 +7,11 @@ import automationcraft.engine.selenium.SeleniumBase;
 
 
 /**
- * Page Url: https://booking.jetsmart.com/V2/Login
+ * Page Url:
  */
-public class JetSmartInicioSesionPage extends SeleniumBase {
+public class JSInicioSesionPage extends SeleniumBase {
 
-    public JetSmartInicioSesionPage(WebDriver driver) {
+    public JSInicioSesionPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver,this);
     }
@@ -25,7 +25,7 @@ public class JetSmartInicioSesionPage extends SeleniumBase {
     private By userPass = By.xpath("//form[@id='memberLoginForm']//div[@class='col-xs-1']//div[@class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label float-center is-upgraded']//input[@type='password']");
     private By botonInicioSesion = By.xpath("//button[contains(text(),'Inicia sesión')]");
 
-    //Metodos Keyword Driven: JetSmartInicioSesionPage
+    //Metodos Keyword Driven:
     public void IniciarSesionPersonas(String userMailtxt, String userPasstxt){
         click(seleccionPersonas);
         type(userMailtxt,userMail);

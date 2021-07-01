@@ -1,21 +1,21 @@
-package automationcraft.testcreation.jetsmart.steps;
+package automationcraft.testcreation.js.steps;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import automationcraft.engine.selenium.DriverFactory;
-import automationcraft.testcreation.jetsmart.pages.JetSmartHomePage;
-import automationcraft.testcreation.jetsmart.pages.JetSmartInicioSesionPage;
+import automationcraft.testcreation.js.pages.JSHomePage;
+import automationcraft.testcreation.js.pages.JSInicioSesionPage;
 
 public class LoginPageStep {
 
-    private JetSmartHomePage homePage = new JetSmartHomePage(DriverFactory.getDriver());
-    private JetSmartInicioSesionPage inicioSesionPage = new JetSmartInicioSesionPage(DriverFactory.getDriver());
+    private JSHomePage homePage = new JSHomePage(DriverFactory.getDriver());
+    private JSInicioSesionPage inicioSesionPage = new JSInicioSesionPage(DriverFactory.getDriver());
     private String title;
 
 
     @Given("user is on login page")
     public void user_is_on_login_page() throws InterruptedException {
-        homePage.goToUrl("https://jetsmart.com/cl/es/");
+        //homePage.goToUrl("https://.com/cl/es/");
         homePage.cerrarPopUp();
         homePage.clickIniciaSesion();
     }

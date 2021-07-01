@@ -8,13 +8,13 @@ import org.testng.annotations.DataProvider;
  * Created by Karthik on 21/09/2019.
  */
 @CucumberOptions(
-        features = {"src/test/java/automationcraft/testcreation/jetsmart/features"},
-        glue = {"automationcraft.testcreation.jetsmart.steps","automationcraft.engine.bdd"},
+        features = {"src/test/java/automationcraft/testcreation/js/features"},
+        glue = {"automationcraft.testcreation.js.steps","automationcraft.engine.bdd"},
         plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "timeline:test-output-thread"},
         tags = "@test"
 )
-public class RunnerJetSmart extends AbstractTestNGCucumberTests {
+public class RunnerJS extends AbstractTestNGCucumberTests {
 
         @Override
         @DataProvider

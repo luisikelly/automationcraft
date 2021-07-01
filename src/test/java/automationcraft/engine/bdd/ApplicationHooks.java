@@ -6,7 +6,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import automationcraft.engine.utils.LoadProperties;
 import automationcraft.engine.selenium.DriverFactory;
-import org.testng.annotations.BeforeTest;
 
 import java.net.MalformedURLException;
 import java.util.Properties;
