@@ -1,15 +1,15 @@
-package automationcraft.testcreation.jetsmart.steps;
+package automationcraft.testcreation.js.steps;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import automationcraft.engine.selenium.DriverFactory;
-import automationcraft.testcreation.jetsmart.pages.JetSmartHomePage;
-import automationcraft.testcreation.jetsmart.pages.JetSmartInicioSesionPage;
+import automationcraft.testcreation.js.pages.JSHomePage;
+import automationcraft.testcreation.js.pages.JSInicioSesionPage;
 
 public class LoginPageStep {
 
-    private JetSmartHomePage homePage = new JetSmartHomePage(DriverFactory.getDriver());
-    private JetSmartInicioSesionPage inicioSesionPage = new JetSmartInicioSesionPage(DriverFactory.getDriver());
+    private JSHomePage homePage = new JSHomePage(DriverFactory.getDriver());
+    private JSInicioSesionPage inicioSesionPage = new JSInicioSesionPage(DriverFactory.getDriver());
     private String title;
 
 

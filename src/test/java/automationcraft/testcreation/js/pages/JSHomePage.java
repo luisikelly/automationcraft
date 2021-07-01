@@ -1,4 +1,4 @@
-package automationcraft.testcreation.jetsmart.pages;
+package automationcraft.testcreation.js.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,9 +9,9 @@ import automationcraft.engine.selenium.SeleniumBase;
  * URL: https://jetsmart.com/cl/es/
  * HomePage para automatizacion de casos de Pruebas
  */
-public class JetSmartHomePage extends SeleniumBase {
+public class JSHomePage extends SeleniumBase {
 
-    public JetSmartHomePage(WebDriver driver){
+    public JSHomePage(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver,this);
     }

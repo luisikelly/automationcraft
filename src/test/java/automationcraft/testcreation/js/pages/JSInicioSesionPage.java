@@ -1,4 +1,4 @@
-package automationcraft.testcreation.jetsmart.pages;
+package automationcraft.testcreation.js.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,9 +9,9 @@ import automationcraft.engine.selenium.SeleniumBase;
 /**
  * Page Url: https://booking.jetsmart.com/V2/Login
  */
-public class JetSmartInicioSesionPage extends SeleniumBase {
+public class JSInicioSesionPage extends SeleniumBase {
 
-    public JetSmartInicioSesionPage(WebDriver driver) {
+    public JSInicioSesionPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver,this);
     }
