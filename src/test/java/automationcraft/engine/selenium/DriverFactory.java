@@ -44,7 +44,7 @@ public class DriverFactory {
             desiredCapabilities.setCapability(CapabilityType.BROWSER_NAME, BrowserType.FIREFOX);
             desiredCapabilities.setCapability(CapabilityType.PLATFORM_NAME, Platform.LINUX);
             desiredCapabilities.setCapability("tz", "America/Santiago");
-            hiloLocal.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), desiredCapabilities));
+            hiloLocal.set(new RemoteWebDriver(new URL("http://zalenium-webappspring.apps.ocp.tsoftlabs.com/wd/hub"), desiredCapabilities));
         }else {
             System.out.println("Please pass the correct browser value: "+browser);
         }
