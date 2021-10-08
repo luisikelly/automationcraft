@@ -176,7 +176,7 @@ public class DafitiSteps {
     @When("elimino de la bd")
     public void eliminoDeLaBd() {
         Document doc = new Document("testName","Busqueda por nombre");
-        MongoDBManage manage = new MongoDBManage();
+        MongoDBManage manage = new MongoDBManage("test");
         manage.deleteDocument(doc,"search");
     }
 
