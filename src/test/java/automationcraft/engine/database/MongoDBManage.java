@@ -13,8 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MongoDBManage {
+    public MongoDBManage(String databaseName){
+        this.databaseName = databaseName;
+    }
     ConnectionString connectionString = new ConnectionString("mongodb+srv://admin:Gl7VPtk1saZBYPx8@cluster0-automationcraf.yyz8v.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-    private final String databaseName = "test";
+    private String databaseName;
     public void insertDocument(String collectionName,Object data){
         Class classData = null;
         switch (collectionName){

@@ -53,7 +53,7 @@ public class DafitiHomePage extends SeleniumBase {
      * @return
      */
     public String getUrlCountry(String string) {
-        MongoDBManage manage = new MongoDBManage();
+        MongoDBManage manage = new MongoDBManage("test");
         Document country = new Document("pais",string);
         List<Document> result = manage.getDocuments(country,"countries");
         return result.get(0).getString("url");
