@@ -4,6 +4,7 @@ package automationcraft.engine.selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -99,10 +100,22 @@ public class SeleniumBase {
         return driver.getTitle();
     }
 
+    public void moveToElement(WebElement we){
+        Actions action = new Actions(driver);
+        action.moveToElement(we).build().perform();
+    }
+    public void clickAndHold(WebElement we){
+        Actions action = new Actions(driver);
+        action.clickAndHold(we).build().perform();
+    }
 
+    public String getAttributeValue(By localizador){
+        return findElement(localizador).getAttribute("value");
+    }
 
-
-
+    public String getUrl(){
+        return driver.getCurrentUrl();
+    }
 
 
 }
