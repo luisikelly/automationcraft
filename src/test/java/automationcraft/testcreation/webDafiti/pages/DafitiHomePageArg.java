@@ -46,7 +46,7 @@ public class DafitiHomePageArg extends SeleniumBase {
         searchBox.sendKeys(item);
         manage = new MongoDBManage("test");
         SearchData searchData = new SearchData("Busqueda por nombre",getUrl(),item);
-        manage.insertDocument("search",searchData);
+        manage.insertDocument("search",searchData,SearchData.class);
         Assert.assertEquals(item, getAttributeValue(search));
 
     }

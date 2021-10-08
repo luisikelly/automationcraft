@@ -18,14 +18,8 @@ public class MongoDBManage {
     }
     ConnectionString connectionString = new ConnectionString("mongodb+srv://admin:Gl7VPtk1saZBYPx8@cluster0-automationcraf.yyz8v.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
     private String databaseName;
-    public void insertDocument(String collectionName,Object data){
-        Class classData = null;
-        switch (collectionName){
-            case "search": classData = SearchData.class;
-                break;
-            case "countries": classData = CountryData.class;
-                break;
-        }
+    public void insertDocument(String collectionName,Object data,Class className){
+        Class classData = className;
         MongoClient client = MongoDBConfig.mongoClient(connectionString);
         MongoDatabase database = MongoDBConfig.mongoDatabase(client,databaseName);
         MongoCollection<Object> collection = database.getCollection(collectionName,classData);
