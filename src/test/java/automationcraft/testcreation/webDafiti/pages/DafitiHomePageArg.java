@@ -208,7 +208,7 @@ public class DafitiHomePageArg extends SeleniumBase {
      * funcion: presionar enter para realizar una busqueda
      */
     public void searchEnter() {
-        setKey(search,Keys.ENTER);
+        setKeys(Keys.ENTER,search);
         waitUrlContains("?q=");
     }
 }

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -137,9 +138,17 @@ public class SeleniumBase {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
     }
+    public void setKeys(Keys key, By locator){
+        driver.findElement(locator).sendKeys(key);
+    }
 
-    public void setKey(By localizador,Keys key){
-        driver.findElement(localizador).sendKeys(key);
+    public void selectByVisibleText(By locator, String text){
+        WebElement dropdown = findElement(locator);
+        Select manageDropdown = new Select(dropdown);
+        manageDropdown.selectByVisibleText(text);
+    }
+    public void setText(By localizador, String s){
+        driver.findElement(localizador).sendKeys(s);
     }
 
 }
