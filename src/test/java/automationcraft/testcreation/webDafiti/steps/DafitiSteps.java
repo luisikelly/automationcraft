@@ -1,6 +1,7 @@
 package automationcraft.testcreation.webDafiti.steps;
 
 import automationcraft.engine.database.MongoDBConfig;
+import automationcraft.engine.database.MongoDBManage;
 import automationcraft.engine.selenium.DriverFactory;
 import automationcraft.testcreation.webDafiti.pages.DafitiHomePage;
 import automationcraft.testcreation.webDafiti.pages.DafitiHomePageArg;
@@ -169,5 +170,12 @@ public class DafitiSteps {
         MongoCollection<Document> collection = db.getCollection("usuarios");
         Document canvas = new Document("nombre", "juan");
         collection.insertOne(canvas);
+    }
+
+    @And("elimino de la bd")
+    public void eliminoDeLaBd() {
+        Document doc = new Document("testName","Busqueda por nombre");
+        MongoDBManage manage = new MongoDBManage();
+        manage.deleteDocument(doc,"search");
     }
 }
