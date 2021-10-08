@@ -3,7 +3,7 @@ Feature: Seleccionar país de operacion
   Quiero elegir el pais de operacion de Dafiti,
   Para realizar una compra.
 
-@test @country
+@test @country @bd
   Scenario: Seleccionar Dafiti Argentina
     Given estoy en un navegador con la pagina inicial de Dafiti
     When elijo comprar en "Argentina"

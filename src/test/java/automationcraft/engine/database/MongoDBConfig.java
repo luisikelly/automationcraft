@@ -22,10 +22,10 @@ public class MongoDBConfig {
         return MongoClients.create(settings);
     }
 
-    public static MongoDatabase mongoDatabase(MongoClient mongoClient) {
+    public static MongoDatabase mongoDatabase(MongoClient mongoClient,String dbName) {
         CodecRegistry defaultCodecRegistry = MongoClientSettings.getDefaultCodecRegistry();
         CodecRegistry fromProvider = CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build());
         CodecRegistry pojoCodecRegistry = CodecRegistries.fromRegistries(defaultCodecRegistry, fromProvider);
-        return mongoClient.getDatabase("dbname").withCodecRegistry(pojoCodecRegistry);
+        return mongoClient.getDatabase(dbName).withCodecRegistry(pojoCodecRegistry);
     }
 }

@@ -1,6 +1,7 @@
 package automationcraft.testcreation.webDafiti.pages;
 
 import automationcraft.engine.database.MongoDBManage;
+import automationcraft.engine.database.models.Data;
 import automationcraft.engine.database.models.SearchData;
 import org.testng.Assert;
 import org.openqa.selenium.By;
@@ -45,7 +46,7 @@ public class DafitiHomePageArg extends SeleniumBase {
         searchBox.sendKeys(item);
         manage = new MongoDBManage();
         SearchData searchData = new SearchData("Busqueda por nombre",getUrl(),item);
-        manage.insertDocument("search");
+        manage.insertDocument("search",searchData);
         Assert.assertEquals(item, getAttributeValue(search));
 
     }

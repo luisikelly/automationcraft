@@ -1,9 +1,6 @@
 package automationcraft.engine.database.models;
 
-import lombok.Data;
-
-@Data
-public class CountryData {
+public class CountryData  {
     private String name;
     private String url;
 
