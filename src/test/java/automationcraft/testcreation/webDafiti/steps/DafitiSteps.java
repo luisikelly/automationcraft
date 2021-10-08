@@ -163,23 +163,6 @@ public class DafitiSteps {
     }
 
 
-    @And("Guardo datos en bd")
-    public void guardoDatosEnBd() {
-        ConnectionString connectionString = new ConnectionString("mongodb+srv://admin:Gl7VPtk1saZBYPx8@cluster0-automationcraf.yyz8v.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-        MongoClient client = MongoDBConfig.mongoClient(connectionString);
-        MongoDatabase db = MongoDBConfig.mongoDatabase(client,"test");
-        MongoCollection<Document> collection = db.getCollection("usuarios");
-        Document canvas = new Document("nombre", "juan");
-        collection.insertOne(canvas);
-    }
-
-    @When("elimino de la bd")
-    public void eliminoDeLaBd() {
-        Document doc = new Document("testName","Busqueda por nombre");
-        MongoDBManage manage = new MongoDBManage("test");
-        manage.deleteDocument(doc,"search");
-    }
-
     @And("presiono enter")
     public void presionoEnter() {
         homePageArg.searchEnter();
