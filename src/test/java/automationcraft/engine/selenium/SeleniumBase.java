@@ -2,9 +2,12 @@ package automationcraft.engine.selenium;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -17,10 +20,12 @@ public class SeleniumBase {
 
     //Atributos
     private WebDriver driver;
+    private WebDriverWait wait;
 
     //Constructor Base
     public SeleniumBase(WebDriver driver){
         this.driver = driver;
+        wait = new WebDriverWait(driver,15);
     }
 
     //Wrappers Selenium
@@ -117,5 +122,24 @@ public class SeleniumBase {
         return driver.getCurrentUrl();
     }
 
+    public void waitUrlContains(String s) {
+        wait.until(ExpectedConditions.urlContains(s));
+    }
+
+    public void waitForElementAndClick(By localizador){
+        wait.until(ExpectedConditions.elementToBeClickable(localizador)).click();
+    }
+    public void waitElementClickable(By locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+
+    }
+    public void waitElementVisible(By locator) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+    }
+
+    public void setKey(By localizador,Keys key){
+        driver.findElement(localizador).sendKeys(key);
+    }
 
 }

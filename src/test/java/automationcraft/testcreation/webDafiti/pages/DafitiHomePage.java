@@ -43,7 +43,7 @@ public class DafitiHomePage extends SeleniumBase {
                 break;
             }
         }
-       // waitUrlContains(arg);
+        waitUrlContains(arg);
     }
 
 

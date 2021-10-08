@@ -11,6 +11,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import io.cucumber.java.en.*;
 import org.bson.Document;
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
 
@@ -172,10 +173,15 @@ public class DafitiSteps {
         collection.insertOne(canvas);
     }
 
-    @And("elimino de la bd")
+    @When("elimino de la bd")
     public void eliminoDeLaBd() {
         Document doc = new Document("testName","Busqueda por nombre");
         MongoDBManage manage = new MongoDBManage();
         manage.deleteDocument(doc,"search");
+    }
+
+    @And("presiono enter")
+    public void presionoEnter() {
+        homePageArg.searchEnter();
     }
 }

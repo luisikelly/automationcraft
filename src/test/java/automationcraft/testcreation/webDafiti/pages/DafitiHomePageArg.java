@@ -1,8 +1,8 @@
 package automationcraft.testcreation.webDafiti.pages;
 
 import automationcraft.engine.database.MongoDBManage;
-import automationcraft.engine.database.models.Data;
 import automationcraft.engine.database.models.SearchData;
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -57,7 +57,7 @@ public class DafitiHomePageArg extends SeleniumBase {
     public void search(){
         WebElement buttonSearch = findElement(btnSearch);
         buttonSearch.click();
-       // waitUrlContains("?q=");
+        waitUrlContains("?q=");
     }
 
 
@@ -82,7 +82,7 @@ public class DafitiHomePageArg extends SeleniumBase {
                 break;
             }
         }
-        //waitElementVisible(titleCatalog);
+        waitElementVisible(titleCatalog);
     }
 
     public void selectProduct(String prod){
@@ -95,13 +95,13 @@ public class DafitiHomePageArg extends SeleniumBase {
             }
         }
         moveToElement(item);
-       // waitElementClickable(btnAdd);
+        waitElementClickable(btnAdd);
     }
 
     public void addCart() {
         WebElement add = findElement(btnAdd);
         add.click();
-        //waitElementVisible(cartBox);
+        waitElementVisible(cartBox);
     }
     public void cartBoxDisplayed(){
         WebElement cart = findElement(cartBox);
@@ -111,7 +111,7 @@ public class DafitiHomePageArg extends SeleniumBase {
     public void goToCart() {
         WebElement cartButton = findElement(cart);
         cartButton.click();
-       // waitUrlContains("cart");
+        waitUrlContains("cart");
     }
 
     public void filterBySize(String size){
@@ -129,7 +129,7 @@ public class DafitiHomePageArg extends SeleniumBase {
         List<WebElement> btnsApply = findElements(btnApplyFilter);
         WebElement btnApply = btnsApply.get(0);
         btnApply.click();
-        //waitUrlContains("size=");
+        waitUrlContains("size=");
     }
 
     public void setTextNewletter(String email) {
@@ -165,5 +165,8 @@ public class DafitiHomePageArg extends SeleniumBase {
     }
 
 
-
+    public void searchEnter() {
+        setKey(search,Keys.ENTER);
+        waitUrlContains("?q=");
+    }
 }
