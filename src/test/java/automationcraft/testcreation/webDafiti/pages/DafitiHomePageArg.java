@@ -60,7 +60,10 @@ public class DafitiHomePageArg extends SeleniumBase {
         waitUrlContains("?q=");
     }
 
-
+    /**
+     * funcion: seleccionar categoria
+     * @param cat Nombre categoria
+     */
     public void selectCategory(String cat) {
         List<WebElement> catgoriesList = findElements(categories);
         WebElement categorySelected = null;
@@ -74,6 +77,10 @@ public class DafitiHomePageArg extends SeleniumBase {
         moveToElement(categorySelected);
     }
 
+    /**
+     * funcion: seleccionar seccion dentro de una categoria
+     * @param s Nombre seccion
+     */
     public void selectSection(String s){
         List<WebElement> sectionList = findElements(sections);
         for (WebElement section: sectionList) {
@@ -85,6 +92,10 @@ public class DafitiHomePageArg extends SeleniumBase {
         waitElementVisible(titleCatalog);
     }
 
+    /**
+     * funcion: seleccionar producto
+     * @param prod Nombre producto
+     */
     public void selectProduct(String prod){
         List<WebElement> itemsList = findElements(items);
         WebElement item = null;
@@ -98,22 +109,36 @@ public class DafitiHomePageArg extends SeleniumBase {
         waitElementClickable(btnAdd);
     }
 
+    /**
+     * funcion: añadir a carrito
+     */
     public void addCart() {
         WebElement add = findElement(btnAdd);
         add.click();
         waitElementVisible(cartBox);
     }
+
+    /**
+     * funcion: validar si el desplegable que muetsra el carrito de compras esta desplegado
+     */
     public void cartBoxDisplayed(){
         WebElement cart = findElement(cartBox);
         Assert.assertTrue(cart.isDisplayed());
     }
 
+    /**
+     * funcion: presionar icono ir al carrito de compras
+     */
     public void goToCart() {
         WebElement cartButton = findElement(cart);
         cartButton.click();
         waitUrlContains("cart");
     }
 
+    /**
+     * funcion: seleccionar filtro talle
+     * @param size Filtro talle
+     */
     public void filterBySize(String size){
         List<WebElement> checkbox = findElements(checkboxes);
         for (WebElement option:checkbox) {
@@ -125,6 +150,9 @@ public class DafitiHomePageArg extends SeleniumBase {
 
     }
 
+    /**
+     * funcion: presionar boton aplicar filtro de busqueda talle
+     */
     public void applyFilterSize() {
         List<WebElement> btnsApply = findElements(btnApplyFilter);
         WebElement btnApply = btnsApply.get(0);
@@ -132,11 +160,19 @@ public class DafitiHomePageArg extends SeleniumBase {
         waitUrlContains("size=");
     }
 
+    /**
+     * funcion: ingresar texto en el campo email de newsletter
+     * @param email Texto a ingresar en el campo
+     */
     public void setTextNewletter(String email) {
         WebElement emailBox = findElement(newsLetterBox);
         emailBox.sendKeys(email);
     }
 
+    /**
+     *  funcion: presionar boton para suscribirse a newsletter
+     * @param type Texto del boton que quiere presionar
+     */
     public void clickBtnNewsletter(String type) {
         List<WebElement> buttons = findElements(buttonsNewsletter);
         switch (type){
@@ -159,12 +195,18 @@ public class DafitiHomePageArg extends SeleniumBase {
         }
     }
 
+    /**
+     * funcion: validar el mensaje de error de newsletter
+     * @param m Mensaje esperado
+     */
     public void getMessageNewsletter(String m) {
         WebElement message = findElement(messageNewsletterBox);
         Assert.assertEquals(m,message.getText());
     }
 
-
+    /**
+     * funcion: presionar enter para realizar una busqueda
+     */
     public void searchEnter() {
         setKey(search,Keys.ENTER);
         waitUrlContains("?q=");

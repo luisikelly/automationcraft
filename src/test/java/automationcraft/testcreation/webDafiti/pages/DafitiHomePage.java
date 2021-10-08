@@ -34,7 +34,6 @@ public class DafitiHomePage extends SeleniumBase {
      * Seleccionar país de operación
      * @param countryName Nombre del país
      */
-
     public void selectCountry(String countryName){
         List<WebElement> countriesList = findElement(countries).findElements(By.tagName("a"));
         for (WebElement country: countriesList) {
@@ -47,7 +46,12 @@ public class DafitiHomePage extends SeleniumBase {
     }
 
 
-
+    /**
+     * funcion: Obtener el fragmento del dominio que indica el pais de la base de datos.
+     * Se utiliza MongoDB como base de datos
+     * @param string Pais elegido
+     * @return
+     */
     public String getUrlCountry(String string) {
         MongoDBManage manage = new MongoDBManage();
         Document country = new Document("pais",string);
