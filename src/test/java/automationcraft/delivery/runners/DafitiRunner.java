@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
         glue = {"automationcraft.testcreation.webDafiti.steps","automationcraft.engine.bdd"},
         plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "timeline:test-output-thread"},
-        tags = "@bd"
+        tags = "@test"
 )
 public class DafitiRunner extends AbstractTestNGCucumberTests {
 
