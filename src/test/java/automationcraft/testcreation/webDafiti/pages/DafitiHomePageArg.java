@@ -20,7 +20,7 @@ public class DafitiHomePageArg extends SeleniumBase {
     MongoDBManage manage;
     //Locators
     By search = By.name("q");
-    By btnSearch = By.xpath("//*[contains(@class,'searchButton')]");
+    By btnSearch = By.xpath("//button[@name='submit']");
     By categories = By.xpath("//a[contains(@class,'segment')]");
     By sections = By.xpath("//a[contains(@class,'sectionName')]");
     By cart = By.id("cart-head");
@@ -54,8 +54,7 @@ public class DafitiHomePageArg extends SeleniumBase {
      *  funcion: Presiona el boton de busqueda
      */
     public void search(){
-        WebElement buttonSearch = findElement(btnSearch);
-        buttonSearch.click();
+      click(btnSearch);
         waitUrlContains("?q=");
     }
 
@@ -207,6 +206,7 @@ public class DafitiHomePageArg extends SeleniumBase {
      * funcion: presionar enter para realizar una busqueda
      */
     public void searchEnter() {
+        setKeys(Keys.ARROW_DOWN,search);
         setKeys(Keys.ENTER,search);
         waitUrlContains("?q=");
     }

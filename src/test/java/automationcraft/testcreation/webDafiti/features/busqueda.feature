@@ -14,6 +14,6 @@ Feature: Busqueda en Dafiti
   Scenario: Busqueda por nombre
     Given estoy en un navegador con la pagina inicial de Dafiti Argentina
     When ingreso el texto "Vestido largo" en el campo de busqueda
-    And presiono el boton buscar
+    And presiono enter
     Then  el navegador me muestra los resultados de busqueda por nombre
 
