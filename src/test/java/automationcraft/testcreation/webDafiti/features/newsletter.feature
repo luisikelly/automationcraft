@@ -3,7 +3,7 @@ Feature: Suscripcion newsletter Dafiti
   Quiero suscribirme al newsletter de Dafiti Argentina,
   Para informarme de las ofertas via mail.
 
-  @test @newsletter
+ # @test @newsletter
   Scenario: Suscripcion con direccion de correo invalida
     Given estoy en un navegador con la pagina inicial de Dafiti Argentina
     When ingreso en el campo mail "direccionDeCorreoInvalida"

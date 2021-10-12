@@ -16,8 +16,8 @@ public class MongoDBManage {
     public MongoDBManage(String databaseName){
         this.databaseName = databaseName;
     }
-    ConnectionString connectionString = new ConnectionString("mongodb+srv://admin:Gl7VPtk1saZBYPx8@cluster0-automationcraf.yyz8v.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-    private String databaseName;
+    ConnectionString connectionString = new ConnectionString("mongodb+srv://admin:Gl7VPtk1saZBYPx8@cluster0-automationcraf.yyz8v.mongodb.net/test?retryWrites=true&w=majority");
+    private final String databaseName;
 
     public void insertObject(String collectionName, Object data, Class className){
         MongoClient client = MongoDBConfig.mongoClient(connectionString);
