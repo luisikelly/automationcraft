@@ -26,12 +26,14 @@ public class MongoDBManage {
         collection.insertOne(data);
     }
 
-    public void insertDocuments(String collectionName, List<Document> docs){
+    public void insertDocuments(String collectionName,List<Object> data,Class className){
+        Class classData = className;
         MongoClient client = MongoDBConfig.mongoClient(connectionString);
         MongoDatabase database = MongoDBConfig.mongoDatabase(client,databaseName);
-        MongoCollection<Document> collection = database.getCollection(collectionName);
-        collection.insertMany(docs);
+        MongoCollection<Object> collection = database.getCollection(collectionName,classData);
+        collection.insertMany(data);
     }
+
     public List<Document> getDocuments(Document queryFilter, String collectionName){
         MongoClient client = MongoDBConfig.mongoClient(connectionString);
         MongoDatabase database = MongoDBConfig.mongoDatabase(client,databaseName);
