@@ -38,7 +38,7 @@ public class DafitiHomePageArg extends SeleniumBase {
     //Keyword Driven
 
     /***
-     * Ingresa texto al campo de busqueda
+     * funcion: Ingresa texto al campo de busqueda y guarda en la bd dicho texto.
      * @param item Item a buscar
      */
     public void setTextSearch(String item){
@@ -48,11 +48,10 @@ public class DafitiHomePageArg extends SeleniumBase {
         SearchData searchData = new SearchData("Busqueda por nombre",getUrl(),item);
         manage.insertDocument("search",searchData,SearchData.class);
         Assert.assertEquals(item, getAttributeValue(search));
-
     }
 
     /***
-     *  Search: Presiona el boton de busqueda
+     *  funcion: Presiona el boton de busqueda
      */
     public void search(){
         WebElement buttonSearch = findElement(btnSearch);
