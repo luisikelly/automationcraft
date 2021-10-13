@@ -71,5 +71,11 @@ public class MongoDBManage {
         collection.deleteOne(query);
         Assert.assertNull(collection.find(query));
     }
+    public void deleteDocuments(Document query, String collectionName){
+        MongoClient client = MongoDBConfig.mongoClient(connectionString);
+        MongoDatabase database = MongoDBConfig.mongoDatabase(client,databaseName);
+        MongoCollection<Document> collection = database.getCollection(collectionName);
+        collection.deleteMany(query);
+    }
 
 }
