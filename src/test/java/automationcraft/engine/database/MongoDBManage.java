@@ -52,13 +52,11 @@ public class MongoDBManage {
         collection.find(queryFilter).into(documents);
         return documents ;
     }
-    public List<Document> getDocuments(String collectionName){
+    public Document getLastDocument(String collectionName){
         MongoClient client = MongoDBConfig.mongoClient(connectionString);
         MongoDatabase database = MongoDBConfig.mongoDatabase(client,databaseName);
         MongoCollection<Document> collection = database.getCollection(collectionName);
-        List<Document> documents = new ArrayList<>();
-        collection.find().into(documents);
-        return documents;
+        return  collection.find().sort(new Document("_id", -1)).first();
     }
     public void update(Document query,Document change, String collectionName){
         MongoClient client = MongoDBConfig.mongoClient(connectionString);
